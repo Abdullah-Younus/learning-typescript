@@ -7,8 +7,8 @@ heading.textContent = message;
 document.body.appendChild(heading);
 
 console.log('Message :', message);
-console.log('UserName :', userName);
 
+console.log('UserName :', userName);
 
 let user = {
     name: 'Abdullah',

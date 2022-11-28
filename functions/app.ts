@@ -5,10 +5,7 @@ let hero: string;
 function getHero() {
     return "thore";
 }
-
 hero = getHero();
-
-
 
 function addTwo(num: number) {
     return num + 2;

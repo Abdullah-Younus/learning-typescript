@@ -34,5 +34,32 @@ async function welcome() {
 
 welcome();
 
+async function askQuestion() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "operator",
+            message: "Which operation you want to perform? \n",
+            choices: ['+ Addition', '- Subtraction', '* Multiplication', '/ Division']
+        },
+        {
+            type: "number",
+            name: "num1",
+            message: 'Enter First Number :'
+
+        },
+        {
+            type: "number",
+            name: "num2",
+            message: "Enter Second Number :"
+        }
+    ]).then((answer) => {
+        console.log(answer);
+
+    })
+}
+
+askQuestion()
+
 
 export { }

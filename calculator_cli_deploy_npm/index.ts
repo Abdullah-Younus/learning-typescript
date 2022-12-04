@@ -31,7 +31,7 @@ async function welcome() {
 
 }
 
-welcome();
+await welcome();
 
 async function askQuestion() {
     await inquirer.prompt([

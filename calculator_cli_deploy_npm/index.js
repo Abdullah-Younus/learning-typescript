@@ -1,13 +1,14 @@
 #!usr/bin/env node
-import inquirer from "inquirer";
+import chalk from 'chalk';
+import inquirer from 'inquirer';
 import chalkAnimation from 'chalk-animation';
 const Stop = () => {
     return new Promise((resolve, reject) => {
-        setTimeout(resolve, 2000);
+        setTimeout(resolve, 1000);
     });
 };
 async function welcome() {
-    let rainbowTitle = chalkAnimation.rainbow('Lets Start Calculations');
+    let rainbowTitle = chalkAnimation.rainbow("Lets Start Calculations");
     await Stop();
     rainbowTitle.stop();
     console.log(`
@@ -28,25 +29,54 @@ async function welcome() {
 }
 welcome();
 async function askQuestion() {
-    inquirer.prompt([
+    await inquirer.prompt([
         {
             type: "list",
             name: "operator",
-            message: "Which operation you want to perform? \n",
-            choices: ['Addition', 'Subtraction', 'Multiplication', 'Division']
+            message: "Which operation are you perform? \n",
+            choices: ["Addition", "Subration", "Multiplication", "Division"]
         },
         {
             type: "number",
             name: "num1",
-            message: 'Enter First Number :'
+            message: "Enter First Number :",
         },
         {
             type: "number",
             name: "num2",
             message: "Enter Second Number :"
         }
-    ]).then((answer) => {
-        console.log(answer);
+    ]).then((answers) => {
+        // console.log('Answers :',answers.num1 + answers.num2);
+        if (answers.operator === "Addition") {
+            console.log(`${chalk.green(answers.num1, "+", answers.num2, "=", answers.num1 + answers.num2)}`);
+        }
+        else if (answers.operator === "Subration") {
+            console.log(`${chalk.yellow(answers.num1, "-", answers.num2, "=", answers.num1 - answers.num2)}`);
+        }
+        else if (answers.operator === "Multiplication") {
+            console.log(`${chalk.red(answers.num1, "*", answers.num2, "=", answers.num1 * answers.num2)}`);
+        }
+        else {
+            console.log(`${answers.num1} / ${answers.num2} = ${answers.num1 / answers.num2}`);
+        }
     });
+    // starAgain();
 }
-askQuestion();
+;
+// askQuestion()
+async function starAgain() {
+    do {
+        await askQuestion();
+        var again = await inquirer
+            .prompt({
+            type: 'input',
+            name: 'restart',
+            message: 'Do You Want Play Again ?Press y Or n:'
+        });
+        if (again.restart == 'n') {
+            break;
+        }
+    } while (again.restart == 'y' || again.restart == 'Y' || again.restart == 'n' || again.restart == 'N');
+}
+starAgain();

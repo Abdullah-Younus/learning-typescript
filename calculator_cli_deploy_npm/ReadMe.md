@@ -1,3 +1,9 @@
+# Deploy in npm 
+ * npm i sameer-calculator
+
+
+
+
 # npm i @types/node -D
 
 developer dependencies and add types

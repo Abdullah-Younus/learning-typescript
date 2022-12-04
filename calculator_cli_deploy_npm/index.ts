@@ -34,7 +34,7 @@ async function welcome() {
 await welcome();
 
 async function askQuestion() {
-    await inquirer.prompt([
+    const answers = await inquirer.prompt([
         {
             type: "list",
             name: "operator",
@@ -51,19 +51,17 @@ async function askQuestion() {
             name: "num2",
             message: "Enter Second Number :"
         }
-    ]).then((answers) => {
-        // console.log('Answers :',answers.num1 + answers.num2);
-        if (answers.operator === "Addition") {
-            console.log(`${chalk.green(answers.num1, "+", answers.num2, "=", answers.num1 + answers.num2)}`);
-        } else if (answers.operator === "Subration") {
-            console.log(`${chalk.yellow(answers.num1, "-", answers.num2, "=", answers.num1 - answers.num2)}`);
-        } else if (answers.operator === "Multiplication") {
-            console.log(`${chalk.red(answers.num1, "*", answers.num2, "=", answers.num1 * answers.num2)}`);
-        } else {
-            console.log(`${answers.num1} / ${answers.num2} = ${answers.num1 / answers.num2}`);
-        }
-    })
-    // starAgain();
+    ])
+    // console.log('Answers :',answers.num1 + answers.num2);
+    if (answers.operator === "Addition") {
+        console.log(`${chalk.green(answers.num1, "+", answers.num2, "=", answers.num1 + answers.num2)}`);
+    } else if (answers.operator === "Subration") {
+        console.log(`${chalk.yellow(answers.num1, "-", answers.num2, "=", answers.num1 - answers.num2)}`);
+    } else if (answers.operator === "Multiplication") {
+        console.log(`${chalk.red(answers.num1, "*", answers.num2, "=", answers.num1 * answers.num2)}`);
+    } else {
+        console.log(`${answers.num1} / ${answers.num2} = ${answers.num1 / answers.num2}`);
+    }
 };
 
 // askQuestion()

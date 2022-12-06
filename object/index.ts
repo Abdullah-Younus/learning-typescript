@@ -67,17 +67,24 @@ type cardDetails = cardNumber & cardDate & {
 
 
 
-
-
-
-
-
-
 myUser.name = "Sameer";
 myUser.email = "kk@gmail.com";
 myUser.isActive = true;
 
 
+type teacherypes = {
+    name: string,
+    experience: string
+}
 
+let teacher: teacherypes = {
+    name: 'Zeeshan',
+    experience: "10"
+}
+
+
+
+console.log(teacher.name);
+console.log("Experience =====>", teacher["experience"]);
 
 export { }

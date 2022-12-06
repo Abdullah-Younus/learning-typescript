@@ -23,3 +23,9 @@ var myUser = {
 myUser.name = "Sameer";
 myUser.email = "kk@gmail.com";
 myUser.isActive = true;
+var teacher = {
+    name: 'Zeeshan',
+    experience: "10"
+};
+console.log(teacher.name);
+console.log("Experience =====>", teacher["experience"]);

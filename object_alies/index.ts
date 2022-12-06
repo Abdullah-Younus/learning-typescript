@@ -21,7 +21,26 @@ let student: Student = {
     name: 'Sameer Khan'
 }
 
-
+let student2: Student = {
+    name: 'Abdullah',
+    age: 45
+}
 
 
 console.log(student["name"]);
+console.log(student2["age"]);
+
+
+// Interface
+
+interface Manager {
+    name: string,
+    subOrdiate?: number
+}
+
+let storeManager: Manager = {
+    name: 'Bilal'
+}
+
+
+console.log('Store Manager :', storeManager);

@@ -44,5 +44,32 @@ const allowedPasswords = ["password", "Alexander", "PIAIC"];
 function checkPassword(password) {
     return allowedPasswords.includes(password);
 }
-
 console.log("=====>", checkPassword("password"));
+
+function validatePassword(password) {
+    return new Promise((resolve, reject) => {
+        if (checkPassword(password)) {
+            reject({
+                status: false
+            });
+        } else {
+            resolve({
+                status: true
+            })
+        }
+    })
+}
+
+function checker(password) {
+    validatePassword(password)
+        .then(value => {
+            console.log('Authorize User');
+            console.log('Value ===>', value);
+        })
+        .catch(value => {
+            console.log("Rejected User");
+            console.log(value);
+        })
+}
+
+checker("password");

@@ -1,4 +1,4 @@
-#!usr/bin/env node
+#! /usr/bin/env node
 import chalk from 'chalk'
 import inquirer from 'inquirer';
 import chalkAnimation from 'chalk-animation';
@@ -86,3 +86,41 @@ async function starAgain() {
 starAgain();
 
 export { }
+
+
+// login page
+
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
+
+
+export default function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const { login } = useAuth();
+    const history = useHistory();
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        try {
+            setError('');
+            setLoading(true);
+            await login(email, password
+            );
+            history.push('/');
+        } catch {
+            setError('Failed to log in');
+        }
+        setLoading(false);
+    }
+
+    return (
+        <>
+        <Card>
+        <Card.Body> 

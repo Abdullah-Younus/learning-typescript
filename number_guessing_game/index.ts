@@ -19,6 +19,7 @@ let playerLife: number = 3;
 async function askQuestion() {
     let random_number: number = Math.floor(Math.random() * 10 + 1); // ya math.random 0 sa 1 tak kae bech ma number deta han hum nai multiply kae kar isko 10 tak kara han
     console.log('Random Number :', random_number);
+    console.log(`First Attemp Three Chance ${playerLife}`);
     do {
         playerLife--;
         var question = await inquirer.prompt([
@@ -51,8 +52,26 @@ async function askQuestion() {
     }
 
 }
-await askQuestion();
+// await askQuestion();
 
+
+async function startAgain() {
+    do {
+        playerLife = 3;
+        await askQuestion();
+        var restart = await inquirer.prompt([
+            {
+                type: "input",
+                name: 'start_again',
+                message: "Do You Want To Play Again!Press y or n :"
+            }
+        ]);
+        if (restart.start_again === 'n' || restart.start_again === 'N') {
+            break;
+        }
+    } while (restart.start_again === 'y' || restart.start_again === 'n' || restart.start_again === 'Y' || restart.start_again === 'N')
+}
+await startAgain();
 // async function guess() {
 //     // const machineguess = Math.floor(Math.random() * 60);
 //     // console.log('Machine Guess', machineguess);

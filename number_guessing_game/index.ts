@@ -72,28 +72,3 @@ async function startAgain() {
     } while (restart.start_again === 'y' || restart.start_again === 'n' || restart.start_again === 'Y' || restart.start_again === 'N')
 }
 await startAgain();
-// async function guess() {
-//     // const machineguess = Math.floor(Math.random() * 60);
-//     // console.log('Machine Guess', machineguess);
-//     // console.log('Weclome Guessing Number');
-//     // type define for answer
-//     type Answer = {
-//         num: number;
-//     };
-//     // get answer from user
-//     const answer = await inquirer.prompt<Answer>([
-//         {
-//             type: "input",
-//             name: "num",
-//             message: "Enter Number:"
-//         }
-//     ])
-//     if (answer.num == machineguess) {
-//         console.log('Win');
-//     }
-//     else {
-//         console.log('Lose');
-//     }
-// }
-// guess();
-

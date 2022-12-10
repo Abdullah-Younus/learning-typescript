@@ -8,7 +8,7 @@ async function weclome() {
     await sleep();
     rainbowTitle.stop();
 }
-await weclome();
+// await weclome();
 let playerLife = 3;
 async function askQuestion() {
     let random_number = Math.floor(Math.random() * 10 + 1); // ya math.random 0 sa 1 tak kae bech ma number deta han hum nai multiply kae kar isko 10 tak kara han
@@ -40,13 +40,14 @@ async function askQuestion() {
             console.log(chalk.yellowBright(`Your Number :${question.usr_num} is greater then machine number :${random_number}`));
         }
     } while (playerLife > 0 && random_number !== question.usr_num);
-    if (playerLife == 0) {
+    if (playerLife == 0 && random_number !== question.usr_num) {
         console.log(chalk.bgRed(`Game Over`));
     }
 }
 // await askQuestion();
 async function startAgain() {
     do {
+        await weclome();
         playerLife = 3;
         await askQuestion();
         var restart = await inquirer.prompt([
@@ -62,27 +63,3 @@ async function startAgain() {
     } while (restart.start_again === 'y' || restart.start_again === 'n' || restart.start_again === 'Y' || restart.start_again === 'N');
 }
 await startAgain();
-// async function guess() {
-//     // const machineguess = Math.floor(Math.random() * 60);
-//     // console.log('Machine Guess', machineguess);
-//     // console.log('Weclome Guessing Number');
-//     // type define for answer
-//     type Answer = {
-//         num: number;
-//     };
-//     // get answer from user
-//     const answer = await inquirer.prompt<Answer>([
-//         {
-//             type: "input",
-//             name: "num",
-//             message: "Enter Number:"
-//         }
-//     ])
-//     if (answer.num == machineguess) {
-//         console.log('Win');
-//     }
-//     else {
-//         console.log('Lose');
-//     }
-// }
-// guess();

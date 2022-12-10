@@ -12,7 +12,7 @@ async function weclome() {
     rainbowTitle.stop();
 }
 
-await weclome();
+// await weclome();
 
 let playerLife: number = 3;
 
@@ -47,7 +47,7 @@ async function askQuestion() {
             console.log(chalk.yellowBright(`Your Number :${question.usr_num} is greater then machine number :${random_number}`));
         }
     } while (playerLife > 0 && random_number !== question.usr_num)
-    if (playerLife == 0) {
+    if (playerLife == 0 && random_number !== question.usr_num) {
         console.log(chalk.bgRed(`Game Over`));
     }
 
@@ -57,6 +57,7 @@ async function askQuestion() {
 
 async function startAgain() {
     do {
+        await weclome();
         playerLife = 3;
         await askQuestion();
         var restart = await inquirer.prompt([

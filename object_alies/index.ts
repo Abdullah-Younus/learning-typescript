@@ -44,3 +44,52 @@ let storeManager: Manager = {
 
 
 console.log('Store Manager :', storeManager);
+
+
+type FirstNameLastName = {
+    first: string;
+    last: string;
+}
+
+const hasBoth: FirstNameLastName = {
+    first: "Sameer",
+    last: "Khan"
+}
+
+
+type Poet = {
+    born: number;
+    name: string;
+}
+
+const PoetMatach: Poet = {
+    born: 45,
+    name: 'Sameer'
+}
+
+// const extraProperty: Poet = {
+//     activtiy: "Programmer",
+//     born: 745,
+//     name: "Khan"
+// }
+
+const existinObject = {
+    activtiy: "Walking",
+    born: 45,
+    name: "Sameer"
+}
+
+const extraProperty: Poet = existinObject;
+
+
+// Nested Objects
+
+type Writer = {
+    author: {
+        firstName: string;
+        lastName: string;
+    }
+    name: string;
+}
+
+

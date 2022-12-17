@@ -45,3 +45,30 @@ let data: RawData;
 
 type Id = number | string;
 
+
+
+let lifespan: number | "ongoing" | "Sameer";
+
+
+lifespan = 89;
+lifespan = "Sameer";
+
+
+// const firstName: string | null;
+
+const check: string | number = "Sameer" && 45;
+
+// check = 45;
+
+
+
+const poet = {
+    born: 45,
+    name: "Sameer"
+}
+
+console.log('Poet born:', poet['born']);
+console.log('Poet Another Example :', poet.name);
+
+
+

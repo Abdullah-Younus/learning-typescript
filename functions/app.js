@@ -1,7 +1,7 @@
 // any
 let hero;
 function getHero() {
-    return "thore";
+    return "Salman Khan";
 }
 hero = getHero();
 function addTwo(num) {
@@ -47,8 +47,32 @@ function consoleEror(errmsg) {
 }
 consoleEror('Check Error');
 // some function return Never value
-function handleError(err_msg) {
-    throw new Error(err_msg);
+// function handleError(err_msg: string): never {
+//     throw new Error(err_msg);
+// }
+// handleError('Error Message');
+let singer;
+singer = function () {
+    return "return any String ";
+};
+// anonymous function 
+let myadd1 = function (x, y) {
+    return x + y;
+};
+// anonymous function with explict type
+let myadd2 = function (x, y) {
+    return x + y;
+};
+///type names dont matter'
+let myadd3 = function (x, y) {
+    return x + y;
+};
+console.log("My Add 3 :===========>", myadd3(45, 25));
+// lambda function 
+let myadd4 = (a, b) => a + b;
+console.log('My Add4 lambda function', myadd4(24, 5));
+function greetings(fn) {
+    console.log(fn);
 }
-handleError('Error Message');
+greetings(() => "sameer");
 export {};

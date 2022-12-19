@@ -3,7 +3,7 @@
 let hero: string;
 
 function getHero() {
-    return "thore";
+    return "Salman Khan";
 }
 hero = getHero();
 
@@ -20,7 +20,6 @@ function signUpUser(name: string, email: string, isPaid: boolean) {
 }
 
 // annotate by default
-
 let loginUser = (name: string, email: string, isPaid: boolean = false) => {
 
 }
@@ -89,13 +88,44 @@ consoleEror('Check Error');
 
 
 let singer: (song: string) => string;
+
 singer = function () {
     return "return any String "
 }
 
+// anonymous function 
+let myadd1 = function (x: number, y: number): number {
+    return x + y;
+}
+
+// anonymous function with explict type
+
+let myadd2: (x: number, y: number) => number = function (x: number, y: number): number {
+    return x + y;
+}
+
+///type names dont matter'
+
+let myadd3: (baseValue: number, incrementValue: number) => number = function (x: number, y: number) {
+    return x + y;
+}
+
+console.log("My Add 3 :===========>", myadd3(45, 25));
 
 
 
+// lambda function 
+let myadd4 = (a: number, b: number) => a + b;
 
+console.log('My Add4 lambda function', myadd4(24, 5));
+
+
+type GreetFunction = (a: string) => void;
+
+function greetings(fn: GreetFunction) {
+    console.log(fn);
+}
+
+greetings(() => "sameer");
 
 export { }

@@ -17,4 +17,4 @@ enum Color2 { Red = 1, Green = 2, Blue = 4 } // can assign value to all
 
 var colorIndex = Color2["Blue"];
 
-console.log("Color Index :=======>", colorIndex);
+console.log("Color Index :=======>", colorIndex); // print 4

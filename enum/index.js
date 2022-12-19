@@ -23,5 +23,5 @@ var Color2;
     Color2[Color2["Blue"] = 4] = "Blue";
 })(Color2 || (Color2 = {})); // can assign value to all
 var colorIndex = Color2["Blue"];
-console.log("Color Index :=======>", colorIndex);
+console.log("Color Index :=======>", colorIndex); // print 4
 export {};

@@ -1,7 +1,7 @@
 // anonymous
 
 let teacher: { name: string, exp: number } = {
-    name: 'ZeeShan',
+    name: 'Sameer',
     exp: 10
 }
 
@@ -93,3 +93,73 @@ type Writer = {
 }
 
 
+const poemMatch: Writer = {
+    author: {
+        firstName: "Sameer",
+        lastName: "Khan",
+    },
+    name: "Khan Bhai"
+}
+
+type Author = {
+    firstName: string,
+    lastName: string
+}
+
+type Poem = {
+    author: Author,
+    name: string
+}
+
+const poemMismatch: Poem = {
+    author: {
+        firstName: "Sameer",
+        lastName: "Khan",
+    },
+    name: "Sameer"
+}
+
+
+type PoemWithPages = {
+    name: string;
+    pages: number;
+    type: 'pages';
+}
+
+
+type PoemWithRhymes = {
+    name: string;
+    rhymes: boolean;
+    type: 'rhymes'
+}
+
+type Poems = PoemWithPages | PoemWithRhymes;
+
+
+const poemsss: Poems = Math.random() > 0.5
+    ? { name: "The Double Image", pages: 7, type: "pages" }
+    : { name: "kind", rhymes: true, type: 'rhymes' }
+
+
+if (poemsss.type === "pages") {
+    console.log(`It's a got pages ${poemsss.pages}`);
+} else {
+    console.log(`It rhymes :${poemsss.rhymes}`);
+
+}
+
+
+// intersection type
+
+
+type Artwork = {
+    genre: string;
+    name: string;
+}
+
+type Writing = {
+    pages: number;
+    name: string;
+}
+
+type WrittenArt = Artwork & Writing;

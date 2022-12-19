@@ -80,14 +80,18 @@ consoleEror('Check Error');
 
 // some function return Never value
 
-function handleError(err_msg: string): never {
-    throw new Error(err_msg);
+// function handleError(err_msg: string): never {
+//     throw new Error(err_msg);
+// }
+
+// handleError('Error Message');
+
+
+
+let singer: (song: string) => string;
+singer = function () {
+    return "return any String "
 }
-
-handleError('Error Message');
-
-
-
 
 
 

@@ -1,7 +1,5 @@
-"use strict";
 // any
-exports.__esModule = true;
-var hero;
+let hero;
 function getHero() {
     return "thore";
 }
@@ -15,8 +13,7 @@ function getUpperCase(val) {
 function signUpUser(name, email, isPaid) {
 }
 // annotate by default
-var loginUser = function (name, email, isPaid) {
-    if (isPaid === void 0) { isPaid = false; }
+let loginUser = (name, email, isPaid = false) => {
 };
 signUpUser("Abdullah", "abc@gmail.com", true);
 loginUser('sameer', 'abd@gmail.com');
@@ -25,7 +22,7 @@ getUpperCase("Sameer");
 function addTwoNums(num) {
     return num + 2;
 }
-var addNum = addTwoNums(45);
+let addNum = addTwoNums(45);
 console.log('Add Two Number :', addNum);
 function getValue(myVal) {
     if (myVal > 5) {
@@ -33,17 +30,17 @@ function getValue(myVal) {
     }
     return "200 OK";
 }
-var getNum = getValue(6);
+let getNum = getValue(6);
 console.log('Get Number :', getNum);
-var getHello = function (name) {
+const getHello = (name) => {
     return name;
 };
-var greeting = getHello("Sameer");
+let greeting = getHello("Sameer");
 console.log('Greeting :', greeting);
-var heros = ["thor", "spiderman", "ironman"];
+const heros = ["thor", "spiderman", "ironman"];
 // const heros = [1, 2, 3];
-heros.map(function (hero) {
-    return "hero is ".concat(hero);
+heros.map((hero) => {
+    return `hero is ${hero}`;
 });
 function consoleEror(errmsg) {
     console.log("Error :", errmsg);
@@ -54,3 +51,4 @@ function handleError(err_msg) {
     throw new Error(err_msg);
 }
 handleError('Error Message');
+export {};

@@ -51,10 +51,19 @@ var x: { id: number, [x: string]: any };// /Note now 'x' can have any name, just
 
 x = { id: 45, fullName: "Sameer", lastname: "asdfasf", age: "asfdgasdfasd" }; // OK, `fullName` matched by index signature
 
-
+// var khan = { id: number, [y: string]: any };
 //Case 3b
 myTypes = { id: 45, name: "Tom" };
 
-//Case 
+
+var ss: { id: number, [ss: string]: any }
+//Case
+ss = { id: 45 }
 
 
+
+let secondtype = { name: "Khan", id: 45 };
+
+secondtype = { id: 25, name: "Abdullah" };
+
+secondtype = { id: 3, name: "KK" };

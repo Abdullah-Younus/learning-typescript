@@ -5,7 +5,7 @@
 
 function add(arg: string, arg2: string): string; // option 1
 function add(arg: string, arg2: number): number; // option 2
-function add(arg: string, arg2: string): boolean; // option 3
+function add(arg: boolean, arg2: boolean): boolean; // option 3
 
 
 function add(arg1: any, arg2: any): any {

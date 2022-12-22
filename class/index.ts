@@ -18,8 +18,61 @@ async function welcome() {
 
 await welcome();
 
+let Teachers: string[] = ["Sir Zia", "Daniyal Nagori", "Zeeshan Hanif"];
+let Students: string[] = ["Sameer", "Abdullah", "Daniyal"];
 
-class Universities {
-    names: string[];
 
+class University {
+    name: string[];
+    department: string[];
+    address: string[];
+    constructor(name: string[], address: string[], department: string[]) {
+        this.name = name;
+        this.address = address;
+        this.department = department;
+    }
 }
+
+
+class Human {
+    name: string[];
+    age: number[];
+
+    constructor(name: string[], age: number[]) {
+        this.name = name;
+        this.age = age;
+    }
+}
+class Student extends Human {
+    rollNo: number[];
+    constructor(name: string[], age: number[], rollNo: number[]) {
+        super(name, age);
+        this.rollNo = rollNo;
+    }
+}
+class Teacher extends Human {
+    subject: string[];
+    constructor(name: string[], age: number[], subject: string[]) {
+        super(name, age);
+        this.subject = subject
+    }
+}
+
+
+
+
+
+    // let StudentName = await inquirer.prompt([
+//     {
+//         type: "list",
+//         name: "student",
+//         message: "Select Student",
+//         choices: Student
+//     }
+// ]);
+
+
+// class human
+
+
+

@@ -13,7 +13,7 @@ function add(arg1: any, arg2: any): any {
 }
 
 
-console.log(add(1, 2));
+// console.log(add(1, 2));
 console.log(add("Hello", "World"));
 console.log(add(true, false));
 

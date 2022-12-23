@@ -1,0 +1,4 @@
+// tuples types have the advantage that you can accurately describe the type of an array of mixed types
+
+
+var tuple: [number, string] = [1, "Sameer"];

@@ -37,17 +37,17 @@ console.log('Obj2 =======>', obj2.name);
 class Student {
     firstName: string;
     lastName: string;
-    age: number
+    // age: number
 
     constructor(firstName: string, lastName: string, age?: number) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age ;
+        // this.age = age ;
     }
 
     getFirstName() {
         console.log("My First Name Is :" + this.firstName);
-        console.log("My Age :" + this.age);
+        // console.log("My Age :" + this.age);
     }
 
     getSecondName(arg: string) {

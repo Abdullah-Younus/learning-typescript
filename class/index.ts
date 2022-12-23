@@ -39,10 +39,10 @@ class Student {
     lastName: string;
     age: number
 
-    constructor(firstName: string, lastName: string, age: number) {
+    constructor(firstName: string, lastName: string, age?: number) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
+        this.age = age ;
     }
 
     getFirstName() {
@@ -58,3 +58,4 @@ class Student {
 const obj6 = new Student("sameer", "khan", 45);
 obj6.getFirstName();
 obj6.getSecondName("45");
+

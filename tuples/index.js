@@ -15,4 +15,10 @@ if (passingResponse[1] === 200) {
     const localInfo = JSON.parse(passingResponse[0]);
     console.log('local Info ===>', localInfo);
 }
+const staff = [
+    [0, "Sameer", "Khan", "Abdullah"],
+    [1, "Khan", "Bhai", "dsafas"],
+    [2, "Bhai", "Khan", "Younus"],
+];
+console.log('Staff ====>', staff);
 export {};

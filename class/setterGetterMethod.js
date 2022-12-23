@@ -1,0 +1,22 @@
+"use strict";
+// let x: number = 0;
+Object.defineProperty(exports, "__esModule", { value: true });
+// class C {
+//     x: string = "hello";
+//     m() {
+//         x = "world Clas";
+//     }
+// }
+// Getters Setters
+// Classes can also have accessors:
+class C {
+    _length = 0;
+    get length() {
+        return this._length;
+    }
+    set length(value) {
+        this._length = value;
+    }
+}
+const getterSetterObj = new C();
+console.log('getterSetterObj.length ====>', getterSetterObj.length);

@@ -35,3 +35,17 @@ const staff: StaffAccount[] = [
 ];
 
 console.log('Staff ====>', staff);
+
+
+type PayStubs = [StaffAccount, ...number[]];
+
+const payStubs: PayStubs[] = [
+    [staff[0], 250],
+    [staff[1], 250, 450],
+    [staff[0], 300, 250, 452],
+];
+
+console.log('Pay Stubs:', payStubs);
+
+
+

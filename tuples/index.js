@@ -21,4 +21,10 @@ const staff = [
     [2, "Bhai", "Khan", "Younus"],
 ];
 console.log('Staff ====>', staff);
+const payStubs = [
+    [staff[0], 250],
+    [staff[1], 250, 450],
+    [staff[0], 300, 250, 452],
+];
+console.log('Pay Stubs:', payStubs);
 export {};

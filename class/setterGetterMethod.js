@@ -19,4 +19,5 @@ class C {
     }
 }
 const getterSetterObj = new C();
-console.log('getterSetterObj.length ====>', getterSetterObj.length);
+console.log('gettergetterObj.length ====>', getterSetterObj.length);
+console.log('getterSetterObj.length ====>', getterSetterObj.length = 45);

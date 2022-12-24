@@ -27,3 +27,27 @@ console.log('gettergetterObj.length ====>', getterSetterObj.length);
 console.log('getterSetterObj.length ====>', getterSetterObj.length = 45);
 
 
+class Thing {
+    _size = 0;
+
+    get size(): number {
+        return this._size;
+    }
+
+    set size(value: string | number | boolean) {
+        let num = Number(value);
+
+        // Don't allow NaN, Infinity Etc.
+        if (!Number.isFinite(num)) {
+            this._size = 0;
+            return;
+        }
+        this._size = num;
+    }
+
+}
+
+const obj3 = new Thing();
+console.log('obj====>', obj3._size);
+console.log('obj====>', obj3.size = 65);
+

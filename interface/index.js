@@ -1,107 +1,64 @@
-interface Pingable {
-    ping(): void
-}
-
-class Sonar implements Pingable {
+class Sonar {
     ping() {
         console.log("ping");
     }
 }
-
-class Ball implements Pingable {
-    ping(): void {
-
+class Ball {
+    ping() {
     }
-
     pong() {
         console.log("pong");
-
     }
 }
-
-
-//  cautions 
-
-
-interface Checkable {
-    check(name: string): boolean
+class NameChecker {
 }
-
-class NameChecker implements Checkable {
-    // check(s) {
-    //     return s.toLowerCase() === "ok"
-    // }
-
-}
-
-interface A {
-    x: number;
-    y?: number;
-}
-
-class C implements A {
+class C {
     x = 0;
 }
 // y does not exit on type C;
-
 const css = new C();
-css.x
-
-
+css.x;
 class Base {
     greet() {
         console.log('Hello World');
     }
 }
-
 class Derived extends Base {
-
     // overriding Methods
-    greet(name?: string) {
+    greet(name) {
         if (name === undefined) {
             super.greet(); // This Method Is calling Base Clas
-        } else {
+        }
+        else {
             console.log(`Hello ${name.toUpperCase()} `);
         }
     }
 }
-
-
 const d = new Derived();
 d.greet();
 d.greet("Sameer");
-
 // Alias the derived instance through a base class
-
-const b: Base = d;
-
+const b = d;
 b.greet();
-
-
 class Animal {
-    protected name: string;
-
-    constructor(name: string) {
+    name;
+    constructor(name) {
         this.name = name;
     }
-    move(distanceInMeters: number) {
+    move(distanceInMeters) {
         console.log(`${this.name} moved ${distanceInMeters} m.`);
     }
 }
-
 class Dog extends Animal {
-
     bark() {
         console.log('Woof!');
     }
-
     move(distanceInMeters = 45) {
         console.log('Running ......');
-        super.move(distanceInMeters)
+        super.move(distanceInMeters);
     }
 }
-
 const dg = new Dog('Puppi');
 dg.move();
-
 console.log(dg.move());
+export {};
